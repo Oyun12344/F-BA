@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FIBA - Vente et réparation de PC Gamer à Lormont. Configurations sur-mesure, garantie, conseils experts.">
+  <title>FIBA - PC Gamer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f2fe 0%, #f6f8fa 100%);
+    }
+    .top-nav {
+      display: flex;
+      justify-content: center !important;
+      align-items: center;
+      background: #fff;
+      padding: 8px 0;
+      box-shadow: 0 2px 8px rgba(30,41,59,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      margin: 0 auto;
+    }
+    .nav-links a {
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .nav-links a:hover {
+      color: #38bdf8;
+      background: #e0f2fe;
+    }
+    .main-title {
+      text-align: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 38px 0 18px 0;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px #38bdf81a;
+    }
+    .vente-section {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 4px 32px #38bdf81a;
+      padding: 40px 24px 32px 24px;
+      margin-bottom: 40px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .vente-title {
+      font-family: 'Pacifico', cursive;
+      color: #1e293b;
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .vente-desc {
+      text-align: center;
+      color: #334155;
+      font-size: 1.25em;
+      margin-bottom: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      font-weight: 500;
+      text-shadow: 0 2px 12px #38bdf81a;
+      letter-spacing: 0.1px;
+    }
+    .vente-desc strong {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+    .vente-desc .emoji {
+      font-size: 1.2em;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      justify-items: center;
+      align-items: stretch;
+    }
+    .card {
+      position: relative;
+      overflow: visible;
+      min-width: 0;
+      max-width: 320px;
+      width: 100%;
+      margin-bottom: 0;
+    }
+    .badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: linear-gradient(90deg, #38bdf8 60%, #1e293b 100%);
+      color: #fff;
+      font-size: 0.95em;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #38bdf822;
+      z-index: 2;
+      letter-spacing: 0.5px;
+    }
+    .prix {
+      font-size: 1.4em;
+      color: #38bdf8;
+      font-weight: 700;
+      margin: 10px 0 8px 0;
+      letter-spacing: 1px;
+    }
+    .btn-fiche {
+      background: #fff;
+      color: #38bdf8;
+      border: 2px solid #38bdf8;
+      border-radius: 25px;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 1em;
+      margin-right: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-fiche:hover {
+      background: #38bdf8;
+      color: #fff;
+      border: 2px solid #1e293b;
+    }
+    .card:hover {
+      border: 2px solid #38bdf8;
+      box-shadow: 0 12px 48px 0 #38bdf866, 0 2px 12px rgba(30,41,59,0.13);
+      z-index: 2;
+    }
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 16px;
+        margin-right: 10px;
+      }
+      .main-title {
+        font-size: 1.5em;
+      }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+    }
+    @media (max-width: 600px) {
+      .top-nav {
+        justify-content: center;
+      }
+      .nav-links {
+        gap: 10px;
+        margin-right: 0;
+      }
+      .vente-section {
+        padding: 18px 4px 18px 4px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="reparation.html">Réparation</a>
+        <a href="vente.html">Vente Téléphones</a>
+        <a href="pcgamer.html">PC Gamer</a>
+        <a href="contact.html">Contact</a>
+        <a href="panier.html">🛒 Panier</a>
+    </div>
+  </div>
+  <h1 class="main-title">FIBA</h1>
+  <section class="vente-section">
+    <h2 class="vente-title">Vente de PC Gamer</h2>
+    <p class="vente-desc">
+      <span class="emoji">💻</span> <strong>Sélection premium</strong> de PC Gamer neufs & reconditionnés !<br>
+      <span class="emoji">🔥</span> <strong>Performances extrêmes</strong>, <strong>garantie solide</strong> et <strong>configurations personnalisées</strong>.<br>
+      <span class="emoji">🚀</span> Prêt à jouer, <strong>testé</strong>, <strong>livré rapidement</strong>… Passez au niveau supérieur !
+    </p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Nouveau</span>
+        <img class="service-img" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSsAJFx2B3KPIy9AOzLGNMBq3DE22k-15sOpnmCCKoF_0je3CRrFpqI6hQs3R64YgSIcb7lrMRuEy_20UUmf3k_SQyt_YGKlS5hYLDG3UV9aHRPJ75LA8160uz9s1pQJUC7msM1pBQ&usqp=CAc" alt="PC Gamer RTX 4060">
+        <h4>PC Gamer RTX 4060</h4>
+        <p>Intel i5, 16Go RAM, 1To SSD, RTX 4060</p>
+        <p class="prix">1199€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-4060')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-4060" style="display:none;">
+          <ul>
+            <li>Processeur : Intel Core i5-12400F</li>
+            <li>Carte graphique : NVIDIA RTX 4060 8Go</li>
+            <li>Mémoire vive : 16 Go DDR4</li>
+            <li>Stockage : SSD 1 To NVMe</li>
+            <li>Alimentation : 600W certifiée</li>
+            <li>Boîtier : RGB Gaming</li>
+            <li>OS : Windows 11</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <span class="badge">Promo</span>
+        <img class="service-img" src="https://www.cdiscount.com/pdt2/1/9/3/1/300x300/bea1701099100193/rw/beastcom-q5-pc-gamer-intel-i7-11700f-8x-4-90ghz.jpg" alt="PC Gamer AMD RX 6700">
+        <h4>PC Gamer AMD RX 6700</h4>
+        <p>Ryzen 5, 16Go RAM, 512Go SSD, RX 6700 XT</p>
+        <p class="prix">999€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-6700')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-6700" style="display:none;">
+          <ul>
+            <li>Processeur : AMD Ryzen 5 5600X</li>
+            <li>Carte graphique : AMD Radeon RX 6700 XT 12Go</li>
+            <li>Mémoire vive : 16 Go DDR4</li>
+            <li>Stockage : SSD 512 Go NVMe</li>
+            <li>Alimentation : 550W certifiée</li>
+            <li>Boîtier : ATX Gaming</li>
+            <li>OS : Windows 11</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <img class="service-img" src="https://static.fnac-static.com/multimedia/Images/33/F3/95/10/17391411-1505-1540-1/tsp20211112120711/Vibox-VIII-51-SG-PC-Gamer-Intel-i9-11900F-Proceeur-5-2GHz-Nvidia-RTX-3070-8Go-32Go-RAM-1To-NVMe-M-2-D-700W-PSU-Windows-11-WiFi.jpg" alt="PC Gamer RTX 3070">
+        <h4>PC Gamer RTX 3070</h4>
+        <p>Intel i7, 32Go RAM, 1To SSD, RTX 3070</p>
+        <p class="prix">1499€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-3070')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-3070" style="display:none;">
+          <ul>
+            <li>Processeur : Intel Core i7-11700F</li>
+            <li>Carte graphique : NVIDIA RTX 3070 8Go</li>
+            <li>Mémoire vive : 32 Go DDR4</li>
+            <li>Stockage : SSD 1 To NVMe</li>
+            <li>Alimentation : 700W certifiée</li>
+            <li>Boîtier : RGB Gaming</li>
+            <li>OS : Windows 11</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <img class="service-img" src="https://m.media-amazon.com/images/I/61YhNzPnYsL._UF1000,1000_QL80_.jpg" alt="PC Gamer Elite">
+        <h4>PC Gamer Elite</h4>
+        <p>AMD Ryzen 7, 32Go RAM, 2To SSD, RTX 4070</p>
+        <p class="prix">1799€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-elite')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-elite" style="display:none;">
+          <ul>
+            <li>Processeur : AMD Ryzen 7 5800X</li>
+            <li>Carte graphique : NVIDIA RTX 4070 12Go</li>
+            <li>Mémoire vive : 32 Go DDR4</li>
+            <li>Stockage : SSD 2 To NVMe</li>
+            <li>Alimentation : 750W certifiée</li>
+            <li>Boîtier : ATX RGB</li>
+            <li>OS : Windows 11</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <span class="badge">Top vente</span>
+        <img class="service-img" src="https://m.media-amazon.com/images/I/61dMPZXeLZL.jpg" alt="PC Gamer RTX 3060">
+        <h4>PC Gamer RTX 3060</h4>
+        <p>Intel i5, 16Go RAM, 512Go SSD, RTX 3060</p>
+        <p class="prix">899€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-3060')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-3060" style="display:none;">
+          <ul>
+            <li>Processeur : Intel Core i5-11400F</li>
+            <li>Carte graphique : NVIDIA RTX 3060 12Go</li>
+            <li>Mémoire vive : 16 Go DDR4</li>
+            <li>Stockage : SSD 512 Go NVMe</li>
+            <li>Alimentation : 550W certifiée</li>
+            <li>Boîtier : ATX Gaming</li>
+            <li>OS : Windows 11</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <img class="service-img" src="https://media.ldlc.com/r1600/ld/products/00/05/06/65/LD0005066554_2.jpg" alt="PC Gamer LDLC">
+        <h4>PC Gamer LDLC</h4>
+        <p>Intel i5, 16Go RAM, 1To SSD, GTX 1660</p>
+        <p class="prix">799€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-ldlc')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-ldlc" style="display:none;">
+          <ul>
+            <li>Processeur : Intel Core i5-10400F</li>
+            <li>Carte graphique : NVIDIA GTX 1660 6Go</li>
+            <li>Mémoire vive : 16 Go DDR4</li>
+            <li>Stockage : SSD 1 To NVMe</li>
+            <li>Alimentation : 500W certifiée</li>
+            <li>Boîtier : ATX</li>
+            <li>OS : Windows 10</li>
+            <li>Garantie : 1 an</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <span class="badge">Nouveau</span>
+        <img class="service-img" src="https://m.media-amazon.com/images/I/713TB3DrB4L.jpg" alt="PC Gamer Moniteur Asus">
+        <h4>PC Gamer Moniteur</h4>
+        <p>Marque : Asus</p>
+        <p class="prix">499€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-asus')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-asus" style="display:none;">
+          <ul>
+            <li>Type : Moniteur Gaming</li>
+            <li>Taille : 27"</li>
+            <li>Résolution : 2560x1440 (QHD)</li>
+            <li>Fréquence : 165Hz</li>
+            <li>Connectique : HDMI, DisplayPort</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <img class="service-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfRc0smJJVaXusAwQ0TRpQ1RpRjdK5Ap4JYA&s" alt="PC Gamer Moniteur HP">
+        <h4>PC Gamer Moniteur</h4>
+        <p>Marque : HP</p>
+        <p class="prix">459€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-hp')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-hp" style="display:none;">
+          <ul>
+            <li>Type : Moniteur Gaming</li>
+            <li>Taille : 24"</li>
+            <li>Résolution : 1920x1080 (Full HD)</li>
+            <li>Fréquence : 144Hz</li>
+            <li>Connectique : HDMI, DisplayPort</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <span class="badge">Nouveau</span>
+        <img class="service-img" src="https://static.fnac-static.com/multimedia/Images/FR/MDM/fa/0a/51/22088442/3756-1/tsp20250603001650/Ecran-PC-Gaming-Acer-Nitro-QG240YS3bipx-23-8-Full-HD-Noir.jpg" alt="PC Gamer Moniteur Dell">
+        <h4>PC Gamer Moniteur</h4>
+        <p>Marque : Dell</p>
+        <p class="prix">529€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-dell')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-dell" style="display:none;">
+          <ul>
+            <li>Type : Moniteur Gaming</li>
+            <li>Taille : 24"</li>
+            <li>Résolution : 1920x1080 (Full HD)</li>
+            <li>Fréquence : 165Hz</li>
+            <li>Connectique : HDMI, DisplayPort</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 FIBA</p>
+    </div>
+  </footer>
+  <script src="panier.js"></script>
+  <script>
+    function toggleSpecs(e, id) {
+      e.preventDefault();
+      var el = document.getElementById(id);
+      if (el.style.display === 'none') {
+        el.style.display = 'block';
+      } else {
+        el.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html> 

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f2fe 0%, #f6f8fa 100%);
+      margin: 0;
+    }
+    .contact-header {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+    .contact-title {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.7em;
+      color: #1e293b;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .contact-title .emoji {
+      font-size: 1.2em;
+      margin-right: 6px;
+    }
+    .contact-subtitle {
+      color: #38bdf8;
+      font-size: 1.2em;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 4px 32px #38bdf81a;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+      padding: 36px 32px 32px 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .contact-infos {
+      flex: 1 1 260px;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center !important;
+      justify-content: flex-start;
+      text-align: center !important;
+    }
+    .contact-infos h3 {
+      color: #1e293b;
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .contact-infos .info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #334155;
+      font-size: 1.08em;
+      margin-bottom: 2px;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+    .contact-infos .info i {
+      color: #38bdf8;
+      font-size: 1.2em;
+    }
+    .contact-infos .horaires {
+      background: #e0f2fe;
+      border-radius: 12px;
+      padding: 10px 18px;
+      color: #1e293b;
+      font-size: 1em;
+      margin-top: 8px;
+      text-align: center !important;
+    }
+    .contact-social {
+      display: flex;
+      gap: 18px;
+      margin-top: 10px;
+      justify-content: center !important;
+    }
+    .contact-social a {
+      font-size: 2em;
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-social .fa-square-facebook { color: #1877f3; }
+    .contact-social .fa-square-instagram { color: #e4405f; }
+    .contact-social .fa-square-pinterest { color: #e60023; }
+    .contact-social .fa-square-x-twitter { color: #222; }
+    .contact-social a:hover { transform: scale(1.15); }
+    .contact-form {
+      flex: 1 1 320px;
+      min-width: 260px;
+      background: #f6f8fa;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #38bdf81a;
+      padding: 24px 18px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .contact-form label {
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-form input, .contact-form textarea {
+      border-radius: 12px;
+      border: 1.5px solid #cbd5e1;
+      padding: 10px 12px 10px 36px;
+      font-size: 1em;
+      margin-top: 2px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 4px #38bdf811;
+      transition: border 0.2s, box-shadow 0.2s;
+      width: 100%;
+      background: #fff url('data:image/svg+xml;utf8,<svg fill="%2338bdf8" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>') no-repeat 10px center;
+    }
+    .contact-form input[type="email"] {
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%2338bdf8" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+    }
+    .contact-form textarea {
+      min-height: 80px;
+      resize: vertical;
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%2338bdf8" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 5h18v2H3zm0 6h12v2H3zm0 6h18v2H3z"/></svg>');
+    }
+    .contact-form button {
+      background: linear-gradient(90deg, #38bdf8 0%, #1e293b 100%);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 1.1em;
+      font-weight: 700;
+      margin-top: 8px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 2px 8px #38bdf822;
+    }
+    .contact-form button:hover {
+      background: #1e293b;
+      color: #38bdf8;
+      box-shadow: 0 4px 16px #38bdf844;
+    }
+    .contact-map {
+      margin: 0 auto 32px auto;
+      max-width: 700px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px #38bdf822;
+      border: 2px solid #e0f2fe;
+    }
+    .contact-map-title {
+      text-align: center;
+      color: #1e293b;
+      font-size: 1.1em;
+      font-weight: 700;
+      margin-bottom: 8px;
+      margin-top: 18px;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    @media (max-width: 900px) {
+      .contact-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 24px 8px 18px 8px;
+      }
+      .contact-map {
+        max-width: 98vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-header">
+    <h1 class="contact-title"><span class="emoji">📞</span>Contactez-nous</h1>
+    <div class="contact-subtitle">Une question ? Un devis ? <strong>Contactez-nous, réponse rapide garantie !</strong></div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-infos">
+      <h3>Nos coordonnées</h3>
+      <div class="info"><i class="fa-solid fa-location-dot"></i> 1 Rue Jean Lurçat, 33310 Lormont<br>&nbsp;&nbsp;&nbsp;&nbsp;School Jacques Brel</div>
+      <div class="info"><i class="fa-solid fa-phone"></i> 01 23 45 67 89</div>
+      <div class="info"><i class="fa-solid fa-envelope"></i> contact@reparation-tel.fr</div>
+      <div class="horaires">
+        <strong>Horaires</strong><br>
+        Lun-Ven : 9h - 19h<br>
+        Sam : 10h - 17h<br>
+        Dim : Fermé
+      </div>
+      <div class="contact-social">
+        <a href="#" title="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="#" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-square-pinterest"></i></a>
+        <a href="#" title="Twitter/X"><i class="fa-brands fa-square-x-twitter"></i></a>
+      </div>
+    </div>
+    <form class="contact-form">
+      <label><i class="fa-solid fa-user"></i> Nom
+        <input type="text" required placeholder="Votre nom">
+      </label>
+      <label><i class="fa-solid fa-envelope"></i> Email
+        <input type="email" required placeholder="Votre email">
+      </label>
+      <label><i class="fa-solid fa-comment"></i> Message
+        <textarea required placeholder="Votre message..."></textarea>
+      </label>
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+  <div class="contact-map-title">Nous trouver</div>
+  <div class="contact-map">
+    <iframe src="https://www.google.com/maps?q=1+Rue+Jean+Lurçat,+33310+Lormont&output=embed" width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</body>
+</html> 

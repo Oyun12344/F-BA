@@ -1,0 +1,4 @@
+/* Pour la navigation, on retire le padding gauche du container */
+.top-nav .container {
+  padding-left: 0;
+} 

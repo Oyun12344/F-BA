@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIBA - Service Premium</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="FIBA - Service premium de réparation de téléphones à Lormont. Écran, batterie, port de charge, diagnostic rapide et garanti.">
+  <style>
+    .hero-reparation {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-reparation::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(1deg); }
+    }
+    
+    .hero-content-reparation {
+      text-align: center;
+      color: white;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .hero-title-reparation {
+      font-size: 3.5em;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      animation: slideInUp 1s ease-out;
+    }
+    
+    .hero-subtitle-reparation {
+      font-size: 1.4em;
+      margin-bottom: 40px;
+      opacity: 0.9;
+      animation: slideInUp 1s ease-out 0.2s both;
+    }
+    
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 50px;
+      animation: slideInUp 1s ease-out 0.4s both;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5em;
+      font-weight: 800;
+      color: #ffd700;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 60px 0;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .service-icon {
+      font-size: 3em;
+      color: #667eea;
+      margin-bottom: 20px;
+      display: block;
+    }
+    
+    .service-title {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+    .service-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .service-price {
+      font-size: 1.8em;
+      font-weight: 800;
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+    
+    .price-estimator {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+      margin: 60px 0;
+    }
+    
+    .estimator-title {
+      text-align: center;
+      font-size: 2.2em;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    
+    .estimator-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #555;
+    }
+    
+    .form-group select,
+    .form-group input {
+      padding: 15px;
+      border: 2px solid #e1e5e9;
+      border-radius: 12px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+    
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      outline: none;
+    }
+    
+    .price-display {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    .estimated-price {
+      font-size: 3em;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    
+    .price-note {
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      margin: 60px 0;
+    }
+    
+    .cta-title {
+      font-size: 2.5em;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    
+    .cta-subtitle {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: #f5576c;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background: white;
+      color: #f5576c;
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .floating-phone {
+      position: absolute;
+      font-size: 4em;
+      color: rgba(255,255,255,0.1);
+      animation: floatPhone 6s ease-in-out infinite;
+    }
+    
+    .floating-phone:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .floating-phone:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
+    .floating-phone:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+    
+    @keyframes floatPhone {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title-reparation { font-size: 2.5em; }
+      .hero-stats { gap: 30px; }
+      .stat-number { font-size: 2em; }
+      .services-grid { grid-template-columns: 1fr; }
+      .estimator-form { grid-template-columns: 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center !important;
+      align-items: center;
+      background: #fff;
+      padding: 8px 0;
+      box-shadow: 0 2px 8px rgba(30,41,59,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="reparation.html">Réparation</a>
+      <a href="vente.html">Vente Téléphones</a>
+      <a href="pcgamer.html">PC Gamer</a>
+      <a href="contact.html">Contact</a>
+      <a href="panier.html">🛒 Panier</a>
+    </div>
+  </nav>
+
+  <section class="hero-reparation">
+    <div class="floating-phone">📱</div>
+    <div class="floating-phone">🔧</div>
+    <div class="floating-phone">⚡</div>
+    
+    <div class="container">
+      <div class="hero-content-reparation">
+        <h1 class="hero-title-reparation">Réparation Express</h1>
+        <p class="hero-subtitle-reparation">Service professionnel, garantie 1 an, prix transparents</p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-target="1500">0</span>
+            <span class="stat-label">Réparations réussies</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="30">0</span>
+            <span class="stat-label">Minutes en moyenne</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="99">0</span>
+            <span class="stat-label">% de satisfaction</span>
+          </div>
+        </div>
+        
+        <a href="#estimator" class="btn-primary">Estimer mon prix</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-mobile-alt service-icon"></i>
+        <h3 class="service-title">Écran cassé</h3>
+        <p class="service-description">Remplacement d'écran avec garantie 1 an. Pièces d'origine ou compatibles de qualité premium.</p>
+        <div class="service-price">À partir de 49€</div>
+        <ul style="color: #666; font-size: 0.9em;">
+          <li>✓ Diagnostic gratuit</li>
+          <li>✓ Réparation express</li>
+          <li>✓ Garantie incluse</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <i class="fas fa-battery-full service-icon"></i>
+        <h3 class="service-title">Batterie défaillante</h3>
+        <p class="service-description">Remplacement de batterie pour retrouver une autonomie optimale. Batteries certifiées.</p>
+        <div class="service-price">À partir de 39€</div>
+        <ul style="color: #666; font-size: 0.9em;">
+          <li>✓ Batterie certifiée</li>
+          <li>✓ Test d'autonomie</li>
+          <li>✓ Garantie 6 mois</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <i class="fas fa-plug service-icon"></i>
+        <h3 class="service-title">Port de charge</h3>
+        <p class="service-description">Réparation du connecteur de charge. Diagnostic précis et réparation durable.</p>
+        <div class="service-price">À partir de 29€</div>
+        <ul style="color: #666; font-size: 0.9em;">
+          <li>✓ Diagnostic complet</li>
+          <li>✓ Pièces de qualité</li>
+          <li>✓ Test de charge</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <i class="fas fa-camera service-icon"></i>
+        <h3 class="service-title">Caméra</h3>
+        <p class="service-description">Remplacement de caméra avant ou arrière. Qualité d'image optimale garantie.</p>
+        <div class="service-price">À partir de 59€</div>
+        <ul style="color: #666; font-size: 0.9em;">
+          <li>✓ Caméra d'origine</li>
+          <li>✓ Test photo</li>
+          <li>✓ Garantie 1 an</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <i class="fas fa-volume-up service-icon"></i>
+        <h3 class="service-title">Haut-parleur/Micro</h3>
+        <p class="service-description">Réparation audio complète. Qualité sonore optimale pour appels et multimédia.</p>
+        <div class="service-price">À partir de 25€</div>
+        <ul style="color: #666; font-size: 0.9em;">
+          <li>✓ Test audio</li>
+          <li>✓ Pièces compatibles</li>
+          <li>✓ Garantie incluse</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <i class="fas fa-tools service-icon"></i>
+        <h3 class="service-title">Autres pannes</h3>
+        <p class="service-description">Boutons, capteur d'empreinte, carte mère... Diagnostic et réparation sur mesure.</p>
+        <div class="service-price">Sur devis</div>
+        <ul style="color: #666; font-size: 0.9em;">
+          <li>✓ Diagnostic gratuit</li>
+          <li>✓ Devis détaillé</li>
+          <li>✓ Garantie adaptée</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="estimator" class="price-estimator">
+      <h2 class="estimator-title">Estimateur de Prix Intelligent</h2>
+      <div class="estimator-form">
+        <div class="form-group">
+          <label>Marque de téléphone</label>
+          <select id="brand">
+            <option value="">Sélectionnez une marque</option>
+            <option value="iphone">iPhone</option>
+            <option value="samsung">Samsung</option>
+            <option value="huawei">Huawei</option>
+            <option value="xiaomi">Xiaomi</option>
+            <option value="oppo">Oppo</option>
+            <option value="oneplus">OnePlus</option>
+            <option value="google">Google Pixel</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Type de réparation</label>
+          <select id="repair-type">
+            <option value="">Sélectionnez le type</option>
+            <option value="ecran">Écran cassé</option>
+            <option value="batterie">Batterie</option>
+            <option value="charge">Port de charge</option>
+            <option value="camera">Caméra</option>
+            <option value="audio">Haut-parleur/Micro</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Modèle (optionnel)</label>
+          <input type="text" id="model" placeholder="Ex: iPhone 12, Galaxy S21...">
+        </div>
+        
+        <div class="form-group">
+          <label>Urgence</label>
+          <select id="urgency">
+            <option value="normal">Normal (24-48h)</option>
+            <option value="express">Express (même jour)</option>
+            <option value="urgent">Urgent (2-4h)</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="price-display" id="price-display" style="display: none;">
+        <div class="estimated-price" id="estimated-price">0€</div>
+        <div class="price-note" id="price-note">Prix estimé - Devis définitif après diagnostic</div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2 class="cta-title">Prêt à réparer votre téléphone ?</h2>
+      <p class="cta-subtitle">Service professionnel, garantie incluse, prix transparents</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Prendre rendez-vous</a>
+        <a href="tel:+33123456789" class="btn-secondary">Appeler maintenant</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 FIBA - Service Premium</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animation des statistiques
+    function animateNumbers() {
+      const numbers = document.querySelectorAll('.stat-number');
+      numbers.forEach(number => {
+        const target = parseInt(number.getAttribute('data-target'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          number.textContent = Math.floor(current);
+        }, 20);
+      });
+    }
+
+    // Estimateur de prix
+    const priceRanges = {
+      iphone: {
+        ecran: { min: 89, max: 299 },
+        batterie: { min: 49, max: 89 },
+        charge: { min: 39, max: 69 },
+        camera: { min: 79, max: 199 },
+        audio: { min: 29, max: 59 },
+        autre: { min: 49, max: 199 }
+      },
+      samsung: {
+        ecran: { min: 69, max: 249 },
+        batterie: { min: 39, max: 79 },
+        charge: { min: 29, max: 59 },
+        camera: { min: 69, max: 179 },
+        audio: { min: 25, max: 49 },
+        autre: { min: 39, max: 179 }
+      },
+      huawei: {
+        ecran: { min: 59, max: 199 },
+        batterie: { min: 35, max: 69 },
+        charge: { min: 25, max: 49 },
+        camera: { min: 59, max: 149 },
+        audio: { min: 22, max: 39 },
+        autre: { min: 35, max: 149 }
+      },
+      xiaomi: {
+        ecran: { min: 49, max: 179 },
+        batterie: { min: 29, max: 59 },
+        charge: { min: 22, max: 39 },
+        camera: { min: 49, max: 129 },
+        audio: { min: 19, max: 35 },
+        autre: { min: 29, max: 129 }
+      },
+      oppo: {
+        ecran: { min: 59, max: 199 },
+        batterie: { min: 35, max: 69 },
+        charge: { min: 25, max: 49 },
+        camera: { min: 59, max: 149 },
+        audio: { min: 22, max: 39 },
+        autre: { min: 35, max: 149 }
+      },
+      oneplus: {
+        ecran: { min: 69, max: 229 },
+        batterie: { min: 39, max: 79 },
+        charge: { min: 29, max: 59 },
+        camera: { min: 69, max: 169 },
+        audio: { min: 25, max: 49 },
+        autre: { min: 39, max: 169 }
+      },
+      google: {
+        ecran: { min: 79, max: 249 },
+        batterie: { min: 45, max: 89 },
+        charge: { min: 35, max: 69 },
+        camera: { min: 79, max: 189 },
+        audio: { min: 29, max: 59 },
+        autre: { min: 45, max: 189 }
+      },
+      autre: {
+        ecran: { min: 49, max: 199 },
+        batterie: { min: 29, max: 69 },
+        charge: { min: 22, max: 49 },
+        camera: { min: 49, max: 149 },
+        audio: { min: 19, max: 39 },
+        autre: { min: 29, max: 149 }
+      }
+    };
+
+    const urgencyMultipliers = {
+      normal: 1,
+      express: 1.3,
+      urgent: 1.6
+    };
+
+    function calculatePrice() {
+      const brand = document.getElementById('brand').value;
+      const repairType = document.getElementById('repair-type').value;
+      const urgency = document.getElementById('urgency').value;
+      
+      if (brand && repairType) {
+        const basePrice = priceRanges[brand][repairType];
+        const multiplier = urgencyMultipliers[urgency];
+        const finalPrice = Math.round((basePrice.min + basePrice.max) / 2 * multiplier);
+        
+        document.getElementById('estimated-price').textContent = finalPrice + '€';
+        document.getElementById('price-display').style.display = 'block';
+        
+        // Animation du prix
+        const priceElement = document.getElementById('estimated-price');
+        priceElement.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          priceElement.style.transform = 'scale(1)';
+        }, 200);
+      } else {
+        document.getElementById('price-display').style.display = 'none';
+      }
+    }
+
+    // Event listeners
+    document.getElementById('brand').addEventListener('change', calculatePrice);
+    document.getElementById('repair-type').addEventListener('change', calculatePrice);
+    document.getElementById('urgency').addEventListener('change', calculatePrice);
+
+    // Animation au scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observer les cartes de service
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+
+    // Démarrer l'animation des nombres quand la section est visible
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateNumbers();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    });
+
+    statsObserver.observe(document.querySelector('.hero-stats'));
+  </script>
+</body>
+</html> 

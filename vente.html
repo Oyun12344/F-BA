@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FIBA - Vente de téléphones neufs et reconditionnés à Lormont. Offres exclusives, garantie solide, conseils personnalisés.">
+  <title>FIBA - Vente de Téléphones</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f2fe 0%, #f6f8fa 100%);
+    }
+    .top-nav {
+      display: flex;
+      justify-content: center !important;
+      align-items: center;
+      background: #fff;
+      padding: 8px 0;
+      box-shadow: 0 2px 8px rgba(30,41,59,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      margin: 0 auto;
+    }
+    .nav-links a {
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .nav-links a:hover {
+      color: #38bdf8;
+      background: #e0f2fe;
+    }
+    .main-title {
+      text-align: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 38px 0 18px 0;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px #38bdf81a;
+    }
+    .vente-section {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 4px 32px #38bdf81a;
+      padding: 40px 24px 32px 24px;
+      margin-bottom: 40px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .vente-title {
+      font-family: 'Pacifico', cursive;
+      color: #1e293b;
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .vente-desc {
+      text-align: center;
+      color: #334155;
+      font-size: 1.25em;
+      margin-bottom: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      font-weight: 500;
+      text-shadow: 0 2px 12px #38bdf81a;
+      letter-spacing: 0.1px;
+    }
+    .vente-desc strong {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+    .vente-desc .emoji {
+      font-size: 1.2em;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      justify-items: center;
+      align-items: stretch;
+    }
+    .card {
+      position: relative;
+      overflow: visible;
+      min-width: 0;
+      max-width: 320px;
+      width: 100%;
+      margin-bottom: 0;
+    }
+    .badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: linear-gradient(90deg, #38bdf8 60%, #1e293b 100%);
+      color: #fff;
+      font-size: 0.95em;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #38bdf822;
+      z-index: 2;
+      letter-spacing: 0.5px;
+    }
+    .prix {
+      font-size: 1.4em;
+      color: #38bdf8;
+      font-weight: 700;
+      margin: 10px 0 8px 0;
+      letter-spacing: 1px;
+    }
+    .btn-fiche {
+      background: #fff;
+      color: #38bdf8;
+      border: 2px solid #38bdf8;
+      border-radius: 25px;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 1em;
+      margin-right: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-fiche:hover {
+      background: #38bdf8;
+      color: #fff;
+      border: 2px solid #1e293b;
+    }
+    .card:hover {
+      border: 2px solid #38bdf8;
+      box-shadow: 0 12px 48px 0 #38bdf866, 0 2px 12px rgba(30,41,59,0.13);
+      z-index: 2;
+    }
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 16px;
+        margin-right: 10px;
+      }
+      .main-title {
+        font-size: 1.5em;
+      }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+    }
+    @media (max-width: 600px) {
+      .top-nav {
+        justify-content: center;
+      }
+      .nav-links {
+        gap: 10px;
+        margin-right: 0;
+      }
+      .vente-section {
+        padding: 18px 4px 18px 4px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="reparation.html">Réparation</a>
+      <a href="vente.html">Vente Téléphones</a>
+      <a href="pcgamer.html">PC Gamer</a>
+      <a href="contact.html">Contact</a>
+      <a href="panier.html">🛒 Panier</a>
+    </div>
+  </div>
+  <h1 class="main-title">FIBA</h1>
+  <section class="vente-section">
+    <h2 class="vente-title">Vente de téléphones</h2>
+    <p class="vente-desc">
+      <span class="emoji">⭐</span> <strong>Sélection premium</strong> de smartphones neufs & reconditionnés !<br>
+      <span class="emoji">📱</span> <strong>Offres exclusives</strong>, <strong>garantie solide</strong> et <strong>accompagnement personnalisé</strong>.<br>
+      <span class="emoji">🚀</span> Prêt à l'emploi, <strong>testé</strong>, <strong>livré rapidement</strong>… Passez à la vitesse supérieure !
+    </p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Nouveau</span>
+        <img class="service-img" src="https://media.ldlc.com/r1600/ld/products/00/05/93/86/LD0005938625_1.jpg" alt="iPhone 13 noir sur fond professionnel">
+        <h4>iPhone 13</h4>
+        <p>Reconditionné - 128 Go</p>
+        <p class="prix">599€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-iphone13')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-iphone13" style="display:none;">
+          <ul>
+            <li>Écran : 6,1" OLED</li>
+            <li>Processeur : Apple A15 Bionic</li>
+            <li>Appareil photo : Double 12MP</li>
+            <li>Batterie : 3240 mAh</li>
+            <li>Système : iOS 15</li>
+            <li>État : Reconditionné</li>
+            <li>Garantie : 1 an</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <span class="badge">Promo</span>
+        <img class="service-img" src="https://m.media-amazon.com/images/I/618nXc9a7gL.jpg" alt="Samsung Galaxy S21 violet sur fond professionnel">
+        <h4>Samsung Galaxy S21</h4>
+        <p>Neuf - 256 Go</p>
+        <p class="prix">499€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-s21')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-s21" style="display:none;">
+          <ul>
+            <li>Écran : 6,2" AMOLED 120Hz</li>
+            <li>Processeur : Exynos 2100</li>
+            <li>Appareil photo : Triple 64+12+12MP</li>
+            <li>Batterie : 4000 mAh</li>
+            <li>Système : Android 12</li>
+            <li>État : Neuf</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <img class="service-img" src="https://smaaart.fr/17873-full_default/mi-11-gris-256go-reconditionne.jpg" alt="Xiaomi Mi 11 gris sur fond professionnel">
+        <h4>Xiaomi Mi 11</h4>
+        <p>Reconditionné - 128 Go</p>
+        <p class="prix">329€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-mi11')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-mi11" style="display:none;">
+          <ul>
+            <li>Écran : 6,81" AMOLED 120Hz</li>
+            <li>Processeur : Snapdragon 888</li>
+            <li>Appareil photo : Triple 108+13+5MP</li>
+            <li>Batterie : 4600 mAh</li>
+            <li>Système : MIUI 13 (Android 12)</li>
+            <li>État : Reconditionné</li>
+            <li>Garantie : 1 an</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <img class="service-img" src="https://m.media-amazon.com/images/I/71ZntbH2+9L.jpg" alt="Oppo Reno 8 noir sur fond professionnel">
+        <h4>Oppo Reno 8</h4>
+        <p>Neuf - 128 Go</p>
+        <p class="prix">379€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-oppo8')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-oppo8" style="display:none;">
+          <ul>
+            <li>Écran : 6,4" AMOLED 90Hz</li>
+            <li>Processeur : MediaTek Dimensity 1300</li>
+            <li>Appareil photo : Triple 50+8+2MP</li>
+            <li>Batterie : 4500 mAh</li>
+            <li>Système : ColorOS 12.1 (Android 12)</li>
+            <li>État : Neuf</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <span class="badge">Top vente</span>
+        <img class="service-img" src="https://i0.wp.com/istore22.ru/wp-content/uploads/2022/07/654.jpg?fit=430%2C438&ssl=1" alt="iPhone 11 noir sur fond professionnel">
+        <h4>iPhone 11</h4>
+        <p>Reconditionné - 64 Go</p>
+        <p class="prix">399€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-iphone11')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-iphone11" style="display:none;">
+          <ul>
+            <li>Écran : 6,1" LCD Liquid Retina</li>
+            <li>Processeur : Apple A13 Bionic</li>
+            <li>Appareil photo : Double 12MP</li>
+            <li>Batterie : 3110 mAh</li>
+            <li>Système : iOS 14</li>
+            <li>État : Reconditionné</li>
+            <li>Garantie : 1 an</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <img class="service-img" src="https://m.media-amazon.com/images/I/71YSg+ziq9L._UF1000,1000_QL80_.jpg" alt="Samsung Galaxy A53 bleu sur fond professionnel">
+        <h4>Samsung Galaxy A53</h4>
+        <p>Neuf - 128 Go</p>
+        <p class="prix">299€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-a53')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-a53" style="display:none;">
+          <ul>
+            <li>Écran : 6,5" Super AMOLED 120Hz</li>
+            <li>Processeur : Exynos 1280</li>
+            <li>Appareil photo : Quad 64+12+5+5MP</li>
+            <li>Batterie : 5000 mAh</li>
+            <li>Système : Android 12</li>
+            <li>État : Neuf</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <span class="badge">Nouveau</span>
+        <img class="service-img" src="https://files.refurbed.com/ii/google-pixel-7a-1689064356.jpg?t=fitdesign&h=600&w=800" alt="Google Pixel 7a noir sur fond professionnel">
+        <h4>Google Pixel 7a</h4>
+        <p>Neuf - 128 Go</p>
+        <p class="prix">449€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-pixel7a')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-pixel7a" style="display:none;">
+          <ul>
+            <li>Écran : 6,1" OLED 90Hz</li>
+            <li>Processeur : Google Tensor G2</li>
+            <li>Appareil photo : Double 64+13MP</li>
+            <li>Batterie : 4385 mAh</li>
+            <li>Système : Android 13</li>
+            <li>État : Neuf</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <img class="service-img" src="https://m.media-amazon.com/images/I/61yDd06pY6L.jpg" alt="OnePlus Nord 2T gris sur fond professionnel">
+        <h4>OnePlus Nord 2T</h4>
+        <p>Neuf - 128 Go</p>
+        <p class="prix">369€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-nord2t')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-nord2t" style="display:none;">
+          <ul>
+            <li>Écran : 6,43" AMOLED 90Hz</li>
+            <li>Processeur : MediaTek Dimensity 1300</li>
+            <li>Appareil photo : Triple 50+8+2MP</li>
+            <li>Batterie : 4500 mAh</li>
+            <li>Système : OxygenOS 12.1 (Android 12)</li>
+            <li>État : Neuf</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+      <div class="card">
+        <span class="badge">Nouveau</span>
+        <img class="service-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyjE-6SFuGKYmOcPV80OvpNgscJo6vNAkM-a0AXwW9R20PduienMFJvNZuWjwUH8qDExk&usqp=CAU" alt="iPhone 15 Pro Max gris sur fond professionnel">
+        <h4>iPhone 15 Pro Max</h4>
+        <p>Neuf - 256 Go</p>
+        <p class="prix">1299€</p>
+        <a href="#" class="btn-fiche" onclick="toggleSpecs(event, 'specs-15promax')">Voir fiche</a>
+        <div class="fiche-specs" id="specs-15promax" style="display:none;">
+          <ul>
+            <li>Écran : 6,7" LTPO OLED 120Hz</li>
+            <li>Processeur : Apple A17 Pro</li>
+            <li>Appareil photo : Triple 48+12+12MP</li>
+            <li>Batterie : 4422 mAh</li>
+            <li>Système : iOS 17</li>
+            <li>État : Neuf</li>
+            <li>Garantie : 2 ans</li>
+          </ul>
+        </div>
+        <a href="#" class="btn">Acheter</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 FIBA</p>
+    </div>
+  </footer>
+  <script src="panier.js"></script>
+  <script>
+    function toggleSpecs(e, id) {
+      e.preventDefault();
+      var el = document.getElementById(id);
+      if (el.style.display === 'none') {
+        el.style.display = 'block';
+      } else {
+        el.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html> 

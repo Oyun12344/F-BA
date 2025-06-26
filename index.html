@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FIBA - Réparation, vente de téléphones et PC Gamer à Lormont. Service rapide, prix transparents, accompagnement premium. Votre expert local !">
+  <title>FIBA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f2fe 0%, #f6f8fa 100%);
+    }
+    .fantastic-nav-bg {
+      position: absolute;
+      left: 0; right: 0; top: 0;
+      height: 70px;
+      z-index: 0;
+      background: linear-gradient(90deg, #38bdf8 0%, #a5b4fc 100%);
+      opacity: 0.13;
+      pointer-events: none;
+    }
+    .top-nav {
+      position: relative;
+      z-index: 2;
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 4px 32px #38bdf822, 0 1.5px 0 #38bdf822;
+      backdrop-filter: blur(8px);
+      border-bottom: 1.5px solid #38bdf822;
+      animation: navFadeIn 1.1s cubic-bezier(.4,1.4,.6,1) 0.1s both;
+    }
+    @keyframes navFadeIn {
+      from { opacity: 0; transform: translateY(-30px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      position: relative;
+    }
+    .nav-flex {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 64px;
+      position: relative;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    .nav-left {
+      margin-right: 36px;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .nav-group {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: flex-end;
+      gap: 36px;
+    }
+    .nav-center {
+      display: flex;
+      gap: 36px;
+      font-weight: 800;
+      font-size: 1.18em;
+      white-space: nowrap;
+      min-width: 0;
+      overflow: hidden;
+      text-shadow: 0 2px 8px #38bdf81a;
+    }
+    .nav-center a {
+      color: #312e81;
+      text-decoration: none;
+      position: relative;
+      padding: 2px 8px;
+      border-radius: 8px;
+      transition: color 0.18s, background 0.18s, box-shadow 0.18s;
+      box-shadow: 0 1px 4px #38bdf80a;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      overflow: visible;
+    }
+    .nav-center a::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 12%; right: 12%; bottom: 0;
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #38bdf8 0%, #a5b4fc 100%);
+      transform: scaleX(0);
+      transition: transform 0.25s cubic-bezier(.4,1.4,.6,1);
+      opacity: 0.7;
+    }
+    .nav-center a:hover, .nav-center a:focus {
+      color: #38bdf8;
+      background: #e0f2fe;
+      box-shadow: 0 2px 12px #38bdf822;
+    }
+    .nav-center a:hover::after, .nav-center a:focus::after {
+      transform: scaleX(1);
+    }
+    .nav-center a:last-child {
+      margin-right: 18px;
+    }
+    .nav-left a .icon-social {
+      transition: transform 0.25s, box-shadow 0.25s, color 0.18s;
+      box-shadow: 0 2px 8px #38bdf822;
+      border-radius: 8px;
+      background: #e0f2fe;
+      padding: 2px 4px;
+    }
+    .nav-left a:hover .icon-social {
+      color: #a5b4fc;
+      background: #38bdf8;
+      transform: rotate(-10deg) scale(1.18);
+      box-shadow: 0 4px 16px #38bdf844;
+    }
+    .search-bar {
+      /* supprimée */
+    }
+    @media (max-width: 900px) {
+      .container { padding: 0 6px; }
+      .nav-center { gap: 14px; font-size: 1em; }
+      .nav-left, .nav-right { min-width: 0; gap: 6px; }
+      .nav-right { min-width: 0; }
+      .search-bar { max-width: 120px; }
+      .nav-left { margin-right: 6px; }
+      .nav-right { margin-left: 6px; }
+    }
+    @media (max-width: 600px) {
+      .nav-flex { flex-direction: column; gap: 8px; flex-wrap: wrap; }
+      .nav-center { flex-wrap: wrap; gap: 6px; white-space: normal; }
+      .nav-left, .nav-right { justify-content: center; width: 100%; }
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1100px;
+      margin: 0 auto 10px auto;
+      padding: 0 20px;
+      gap: 32px;
+      text-align: center;
+    }
+    .footer-block {
+      min-width: 180px;
+      margin-bottom: 10px;
+      flex: 1 1 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-block h4 {
+      margin-bottom: 8px;
+      color: #1e293b;
+      font-size: 1.1em;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .footer-social a {
+      font-size: 2em;
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-social .fa-square-facebook { color: #1877f3; }
+    .footer-social .fa-square-instagram { color: #e4405f; }
+    .footer-social .fa-square-pinterest { color: #e60023; }
+    .footer-social .fa-square-x-twitter { color: #222; }
+    .footer-social a:hover { transform: scale(1.15); }
+    .footer-block p, .footer-block ul {
+      margin: 0 0 6px 0;
+      color: #fff;
+      font-size: 1em;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    @media (max-width: 900px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      .footer-block {
+        min-width: 0;
+        width: 100%;
+      }
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: url('https://consomac.fr/images/news/iphone-12-vente-outre-mer.jpg') center/cover no-repeat, linear-gradient(120deg, #38bdf8 0%, #e0f2fe 100%);
+      opacity: 0.18;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="fantastic-nav-bg"></div>
+  <nav class="top-nav">
+    <div class="nav-flex">
+      <div class="nav-left">
+        <a href="index.html" class="logo-link"><img src="img/logo.png" alt="Logo FIBA" class="nav-logo"></a>
+        <a href="#"><i class="fa-brands fa-square-facebook icon-social"></i></a>
+        <a href="#"><i class="fa-brands fa-square-instagram icon-social"></i></a>
+        <a href="#"><i class="fa-brands fa-square-pinterest icon-social"></i></a>
+        <a href="#"><i class="fa-brands fa-square-x-twitter icon-social"></i></a>
+      </div>
+      <div class="nav-group" style="display:flex;align-items:center;flex:1;justify-content:flex-end;gap:36px;">
+        <div class="nav-center">
+          <a href="index.html">Accueil</a>
+          <a href="reparation.html">Réparation</a>
+          <a href="vente.html">Vente Téléphones</a>
+          <a href="pcgamer.html">PC Gamer</a>
+          <a href="contact.html">Contact</a>
+          <a href="panier.html">🛒 Panier</a>
+        </div>
+        <div class="nav-right">
+          <!-- vide, mais garde l'alignement -->
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">FIBA</h1>
+      <p class="hero-subtitle">Votre expert local pour la réparation et la vente de téléphones & PC Gamer</p>
+      <a href="vente.html" class="hero-btn">Voir nos offres</a>
+    </div>
+  </div>
+  <section class="services-fantastic">
+    <h2 class="services-title">Nos services phares</h2>
+    <div class="services-list">
+      <div class="service-block">
+        <span class="service-icon">��</span>
+        <h3>Réparation Express</h3>
+        <p>Écran, batterie, connecteur... Toutes marques, service rapide et garanti.</p>
+      </div>
+      <div class="service-block">
+        <span class="service-icon">📱</span>
+        <h3>Vente Téléphones</h3>
+        <p>Neufs et reconditionnés, garanties, conseils personnalisés et offres exclusives.</p>
+      </div>
+      <div class="service-block">
+        <span class="service-icon">💻</span>
+        <h3>PC Gamer</h3>
+        <p>Assemblage, accessoires et conseils pour gamers exigeants. Configurations sur-mesure !</p>
+      </div>
+      <div class="service-block">
+        <span class="service-icon">⭐</span>
+        <h3>Accompagnement Premium</h3>
+        <p>Conseils, suivi, SAV réactif et proximité. Votre satisfaction, notre priorité !</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-block">
+        <h4>Contact</h4>
+        <p>1 Rue Jean Lurçat, 33310 Lormont<br>School Jacques Brel</p>
+        <p>01 23 45 67 89<br>contact@reparation-tel.fr</p>
+      </div>
+      <div class="footer-block">
+        <h4>Horaires</h4>
+        <p>Lun-Ven : 9h - 19h<br>Sam : 10h - 17h<br>Dim : Fermé</p>
+      </div>
+      <div class="footer-block">
+        <h4>Réseaux sociaux</h4>
+        <div class="footer-social" style="justify-content:center;gap:22px;">
+          <a href="#" title="Facebook"><i class="fa-brands fa-square-facebook" style="color:#1877f3;"></i></a>
+          <a href="#" title="Instagram"><i class="fa-brands fa-square-instagram" style="color:#e4405f;"></i></a>
+          <a href="#" title="Pinterest"><i class="fa-brands fa-square-pinterest" style="color:#e60023;"></i></a>
+          <a href="#" title="Twitter/X"><i class="fa-brands fa-square-x-twitter" style="color:#222;"></i></a>
+        </div>
+      </div>
+      <div class="footer-block">
+        <h4>Mentions légales</h4>
+        <p>© 2024 FIBA<br>Tous droits réservés.</p>
+      </div>
+    </div>
+    <p style="margin-top:10px;text-align:center;">Site réalisé par FIBA</p>
+  </footer>
+  <script src="panier.js"></script>
+</body>
+</html> 
