@@ -1,0 +1,36 @@
+<svg width="1200" height="260" viewBox="0 0 1200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="260" fill="#38bdf8"/>
+  <g opacity="0.15">
+    <rect x="100" y="60" width="120" height="180" rx="18" fill="#fff"/>
+    <rect x="260" y="100" width="80" height="140" rx="16" fill="#fff"/>
+    <rect x="400" y="80" width="100" height="160" rx="18" fill="#fff"/>
+    <rect x="540" y="120" width="60" height="120" rx="14" fill="#fff"/>
+    <rect x="650" y="70" width="110" height="170" rx="18" fill="#fff"/>
+    <rect x="800" y="110" width="90" height="130" rx="16" fill="#fff"/>
+    <rect x="930" y="90" width="100" height="150" rx="18" fill="#fff"/>
+  </g>
+  <g>
+    <rect x="180" y="120" width="60" height="100" rx="12" fill="#fff" stroke="#1e293b" stroke-width="3"/>
+    <rect x="340" y="100" width="80" height="120" rx="14" fill="#fff" stroke="#1e293b" stroke-width="3"/>
+    <rect x="500" y="130" width="50" height="90" rx="10" fill="#fff" stroke="#1e293b" stroke-width="3"/>
+    <rect x="600" y="110" width="70" height="110" rx="14" fill="#fff" stroke="#1e293b" stroke-width="3"/>
+    <rect x="720" y="120" width="60" height="100" rx="12" fill="#fff" stroke="#1e293b" stroke-width="3"/>
+    <rect x="830" y="100" width="80" height="120" rx="14" fill="#fff" stroke="#1e293b" stroke-width="3"/>
+    <rect x="970" y="130" width="50" height="90" rx="10" fill="#fff" stroke="#1e293b" stroke-width="3"/>
+    <!-- Petits détails pour évoquer écrans, boutons, etc. -->
+    <rect x="195" y="140" width="30" height="40" rx="4" fill="#38bdf8"/>
+    <circle cx="210" cy="210" r="4" fill="#1e293b"/>
+    <rect x="355" y="120" width="50" height="60" rx="6" fill="#38bdf8"/>
+    <circle cx="380" cy="210" r="4" fill="#1e293b"/>
+    <rect x="515" y="150" width="20" height="30" rx="3" fill="#38bdf8"/>
+    <circle cx="525" cy="210" r="3" fill="#1e293b"/>
+    <rect x="615" y="130" width="40" height="50" rx="5" fill="#38bdf8"/>
+    <circle cx="635" cy="210" r="4" fill="#1e293b"/>
+    <rect x="735" y="140" width="30" height="40" rx="4" fill="#38bdf8"/>
+    <circle cx="750" cy="210" r="4" fill="#1e293b"/>
+    <rect x="845" y="120" width="50" height="60" rx="6" fill="#38bdf8"/>
+    <circle cx="870" cy="210" r="4" fill="#1e293b"/>
+    <rect x="985" y="150" width="20" height="30" rx="3" fill="#38bdf8"/>
+    <circle cx="995" cy="210" r="3" fill="#1e293b"/>
+  </g>
+</svg> 
